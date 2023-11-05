@@ -12,8 +12,8 @@ const signup = async(req, res) => {
             return res.json({message : "Key_error"})
          }
 
-        const result = await userService.signup(email, password, name, phoneNumber, birthDay, address);
-        
+        const result = await userService.signup(email, password, name, phoneNumber, birthDay, address);  
+
         return res.json({message : "created_success"});
 
     }catch(err){
@@ -36,7 +36,6 @@ const login = async(req, res) => {
         if(result === false){
             throw error;
         }
-
         return res.json({accessToken : result, message : "login_success"});
 
     }catch(err){
